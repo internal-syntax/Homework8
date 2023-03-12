@@ -43,7 +43,7 @@ public class Main {
         int fertilityPer1000people = 17;
         int mortalityPer1000people = 8;
         for (int period = 1; period <= 10; period++) {
-            populationCountryY = populationCountryY + ((populationCountryY / 1000) * fertilityPer1000people) - ((populationCountryY / 1000) * mortalityPer1000people);
+            populationCountryY = populationCountryY + (populationCountryY / 1000 * (fertilityPer1000people - mortalityPer1000people));
             System.out.println("Год " + period + " численность населения составляет " + populationCountryY);
         }
     }
@@ -51,23 +51,25 @@ public class Main {
     public static void task4() {
         System.out.println("Задача 4");
         double contribution = 15_000;
+        double sum = 0;
         int month = 0;
-        while (contribution < 12_000_000) {
-            contribution = contribution + contribution + contribution * 0.07;
+        while (sum < 12_000_000) {
+            sum = sum + contribution + contribution * 0.07;
             month = month + 1;
-            System.out.println("Месяц " + month + " сумма накоплений равна " + contribution + " рублей");
+            System.out.println("Месяц " + month + " сумма накоплений равна " + sum + " рублей");
         }
     }
 
     public static void task5() {
         System.out.println("Задача 5");
         double contribution = 15_000;
+        double sum = 0;
         int month = 0;
-        while (contribution < 12_000_000) {
-            contribution = contribution + contribution + contribution * 0.07;
+        while (sum < 12_000_000) {
+            sum = sum + contribution + contribution * 0.07;
             month = month + 1;
             if (month % 6 == 0) {
-                System.out.println("Месяц " + month + " сумма накоплений равна " + contribution + " рублей");
+                System.out.println("Месяц " + month + " сумма накоплений равна " + sum + " рублей");
             }
         }
     }
@@ -75,13 +77,14 @@ public class Main {
     public static void task6() {
         System.out.println("Задача 6");
         double contribution = 15_000;
+        double sum = 0;
         int year = 9;
         int month = 0;
         while (month < (year * 12)) {
-            contribution = contribution + contribution + contribution *0.07;
+            sum = sum + contribution + contribution * 0.07;
             month = month + 1;
             if (month % 6 == 0) {
-                System.out.println("Месяц " + month + " сумма накоплений равна " + contribution + " рублей");
+                System.out.println("Месяц " + month + " сумма накоплений равна " + sum + " рублей");
             }
         }
     }
