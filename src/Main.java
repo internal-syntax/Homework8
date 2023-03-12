@@ -42,23 +42,18 @@ public class Main {
         int populationCountryY = 12_000_000;
         int fertilityPer1000people = 17;
         int mortalityPer1000people = 8;
-        int period = 0;
-        int populationProfit = ((populationCountryY / 1000) / 1000) * fertilityPer1000people;
-        int populationDecline = ((populationCountryY / 1000) / 1000) * mortalityPer1000people;
-        while (period < 10) {
-            populationCountryY = (populationCountryY + populationProfit) - populationDecline;
-            period = period + 1;
+        for (int period = 1; period <= 10; period++) {
+            populationCountryY = populationCountryY + ((populationCountryY / 1000) * fertilityPer1000people) - ((populationCountryY / 1000) * mortalityPer1000people);
             System.out.println("Год " + period + " численность населения составляет " + populationCountryY);
         }
     }
 
     public static void task4() {
         System.out.println("Задача 4");
-        int contribution = 15_000;
-        int interestOnDeposit = (int) (contribution * 0.07);
+        double contribution = 15_000;
         int month = 0;
         while (contribution < 12_000_000) {
-            contribution = contribution + interestOnDeposit;
+            contribution = contribution + contribution + contribution * 0.07;
             month = month + 1;
             System.out.println("Месяц " + month + " сумма накоплений равна " + contribution + " рублей");
         }
@@ -66,11 +61,10 @@ public class Main {
 
     public static void task5() {
         System.out.println("Задача 5");
-        int contribution = 15_000;
-        int interestOnDeposit = (int) (contribution * 0.07);
+        double contribution = 15_000;
         int month = 0;
         while (contribution < 12_000_000) {
-            contribution = contribution + interestOnDeposit;
+            contribution = contribution + contribution + contribution * 0.07;
             month = month + 1;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + " сумма накоплений равна " + contribution + " рублей");
@@ -80,12 +74,11 @@ public class Main {
 
     public static void task6() {
         System.out.println("Задача 6");
-        int contribution = 15_000;
-        int interestOnDeposit = (int) (contribution * 0.07);
+        double contribution = 15_000;
         int year = 9;
         int month = 0;
         while (month < (year * 12)) {
-            contribution = contribution + interestOnDeposit;
+            contribution = contribution + contribution + contribution *0.07;
             month = month + 1;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + " сумма накоплений равна " + contribution + " рублей");
@@ -103,9 +96,8 @@ public class Main {
     public static void task8() {
         System.out.println("Задача 8");
         int startYear = 1823;
-        int endYear = 2123;
         for (int i = 0; i <= 2123; i = i + 79) {
-            if (i >= startYear && i <= endYear) {
+            if (i >= startYear) {
                 System.out.println(i);
                 System.out.println();
             }
