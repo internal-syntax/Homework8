@@ -54,7 +54,8 @@ public class Main {
         double sum = 0;
         int month = 0;
         while (sum < 12_000_000) {
-            sum = sum + contribution + contribution * 0.07;
+            sum = sum + contribution;
+            sum = sum + sum * 0.07;
             month = month + 1;
             System.out.println("Месяц " + month + " сумма накоплений равна " + sum + " рублей");
         }
@@ -66,7 +67,8 @@ public class Main {
         double sum = 0;
         int month = 0;
         while (sum < 12_000_000) {
-            sum = sum + contribution + contribution * 0.07;
+            sum = sum + contribution;
+            sum = sum + sum * 0.07;
             month = month + 1;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + " сумма накоплений равна " + sum + " рублей");
@@ -81,7 +83,8 @@ public class Main {
         int year = 9;
         int month = 0;
         while (month < (year * 12)) {
-            sum = sum + contribution + contribution * 0.07;
+            sum = sum + contribution;
+            sum = sum + sum * 0.07;
             month = month + 1;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + " сумма накоплений равна " + sum + " рублей");
